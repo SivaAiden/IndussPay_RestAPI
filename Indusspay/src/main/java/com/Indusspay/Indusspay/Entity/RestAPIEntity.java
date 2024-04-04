@@ -9,17 +9,21 @@ import jakarta.persistence.Id;
 public class RestAPIEntity {
 	
 	@Id
-	private Long txnId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long Id;
+	private String txnId;
 	private String customerName;
     private String service;
     private Float amount;
     private Float gst;
     private Float commission;
     
-	public Long getTxnId() {
+    
+	
+	public String getTxnId() {
 		return txnId;
 	}
-	public void setTxnId(Long txnId) {
+	public void setTxnId(String txnId) {
 		this.txnId = txnId;
 	}
 	
